@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:17.4
+    container_name: bank-postgres
+    environment:
+      POSTGRES_DB: bankdb
+      POSTGRES_USER: bankuser
+      POSTGRES_PASSWORD: gobank
+    ports:
+      - "5432:5432"
+    volumes:
+      - bank-db-data:/var/lib/postgresql/data
+
+volumes:
+  bank-db-data:
